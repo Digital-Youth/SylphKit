@@ -23,7 +23,9 @@ export const Button = ({
     backgroundColor = 'transparent';
     textColor = color === 'primary' ? '#1976d2' : '#DF0F0F';
     borderColor = color === 'primary' ? '#1976d2' : '#DF0F0F';
-  } else {
+  }
+  else {
+    backgroundColor = 'transparent'
     textColor = color === 'primary' ? '#1976d2' : '#DF0F0F';
   }
 
@@ -47,7 +49,10 @@ export const Button = ({
         backgroundColor: backgroundColor,
         color: textColor,
         border: borderColor ? `2px solid ${borderColor}` : 'none',
+        // boxShadow:
+        //   variant === 'outlined' ? 'none' : 'rgba(0, 0, 0, 0.15) 0px 2px 8px 0px',
         cursor: 'pointer',
+        
       }}
       {...props}
     >
