@@ -1,2 +1,2 @@
 # SylphKit
-SylphKit is an innovative component library for young developers with a passion for technology
+SylphKit is a modern and innovative component library created especially for young developers with a passion for technology. With SylphKit, you can easily create stunning user interfaces for your Next.js and React projects using reusable components based on Tailwind CSS. Whether you're a novice or experienced developer, SylphKit saves you time by providing pre-designed, ready-to-use components, while allowing you to easily customize each component to meet your project's needs. With SylphKit, creating user interfaces becomes easier and more fun than ever.
