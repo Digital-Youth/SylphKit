@@ -1,5 +1,5 @@
 import React, { ReactNode, HTMLAttributes } from 'react';
-import iconPaths from '../../IconPath.js';
+import iconPaths from '../../Icon/IconPath.js';
 
 export interface Props extends HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
