@@ -1,10 +1,10 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
-import { Text, TextProps } from '../src/Text/Text';
+import { Text, TextProps } from '../src/Typographie/Text/Text';
 
 export default {
-  title: 'Text',
+  title: 'Typographie/Text',
   component: Text,
 } as Meta;
 

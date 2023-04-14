@@ -1,10 +1,12 @@
 import React, { ReactNode, HTMLAttributes } from 'react';
+import iconPaths from '../../IconPath.js';
 
 export interface Props extends HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   variant: 'text' | 'contained' | 'outlined';
   color?: string;
   size?: 'small' | 'medium' | 'large';
+  icon?: keyof typeof iconPaths;
 }
 
 export const Button = ({
@@ -13,6 +15,7 @@ export const Button = ({
   color = '#1976d2',
   size = 'medium',
   className = '',
+  icon,
   ...props
 }: Props) => {
   let backgroundColor, textColor, borderColor;
@@ -42,6 +45,8 @@ export const Button = ({
   const classNames = `rounded-md font-semibold transition-colors focus:outline-none focus:shadow-outline 
     ${className}`;
 
+  const iconPath = icon ? iconPaths[icon].path : null;
+
   return (
     <button
       style={{
@@ -53,10 +58,18 @@ export const Button = ({
         color: textColor,
         border: borderColor ? `1px solid ${borderColor}` : 'none',
         cursor: 'pointer',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
       }}
       className={classNames}
       {...props}
     >
+      {iconPath && (
+        <svg style={{ marginRight: '.5em' }} width="1em" height="1em" viewBox="0 0 24 24">
+          {iconPath}
+        </svg>
+      )}
       {children}
     </button>
   );

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Input, Props } from '../src/Input/Input';
+import { Input, Props } from '../src/Form/Input/Input';
 
 const meta: Meta = {
-  title: 'Input',
+  title: 'Form/Input',
   component: Input,
 };
 

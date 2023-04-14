@@ -83,6 +83,8 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
     "postcss-cli": "^10.1.0",
     "storybook-tailwind-foundations": "^1.1.2"
   },

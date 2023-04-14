@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import { Radio, Props } from '../src/Radio/Radio';
+import { Radio, Props } from '../src/Form/Radio/Radio';
 
 const meta: Meta = {
-  title: 'Radio',
+  title: 'Form/Radio',
   component: Radio,
 };
 
