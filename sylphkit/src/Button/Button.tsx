@@ -3,30 +3,30 @@ import React, { ReactNode, HTMLAttributes } from 'react';
 export interface Props extends HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   variant: 'text' | 'contained' | 'outlined';
-  color?: 'primary' | 'secondary';
+  color?: string;
   size?: 'small' | 'medium' | 'large';
 }
 
 export const Button = ({
   children,
   variant,
-  color = 'primary',
+  color = '#1976d2',
   size = 'medium',
+  className = '',
   ...props
 }: Props) => {
   let backgroundColor, textColor, borderColor;
 
   if (variant === 'contained') {
-    backgroundColor = color === 'primary' ? '#1976d2' : '#DF0F0F';
+    backgroundColor = color;
     textColor = 'white';
   } else if (variant === 'outlined') {
     backgroundColor = 'transparent';
-    textColor = color === 'primary' ? '#1976d2' : '#DF0F0F';
-    borderColor = color === 'primary' ? '#1976d2' : '#DF0F0F';
-  }
-  else {
-    backgroundColor = 'transparent'
-    textColor = color === 'primary' ? '#1976d2' : '#DF0F0F';
+    textColor = color;
+    borderColor = color;
+  } else {
+    backgroundColor = 'transparent';
+    textColor = color;
   }
 
   let padding;
@@ -39,21 +39,22 @@ export const Button = ({
     padding = '12px 24px';
   }
 
+  const classNames = `rounded-md font-semibold transition-colors focus:outline-none focus:shadow-outline 
+    ${className}`;
+
   return (
     <button
       style={{
-        borderRadius: '10px',
+        borderRadius: '5px',
         padding: padding,
         fontSize: '1rem',
         fontWeight: 'bold',
         backgroundColor: backgroundColor,
         color: textColor,
-        border: borderColor ? `2px solid ${borderColor}` : 'none',
-        // boxShadow:
-        //   variant === 'outlined' ? 'none' : 'rgba(0, 0, 0, 0.15) 0px 2px 8px 0px',
+        border: borderColor ? `1px solid ${borderColor}` : 'none',
         cursor: 'pointer',
-        
       }}
+      className={classNames}
       {...props}
     >
       {children}

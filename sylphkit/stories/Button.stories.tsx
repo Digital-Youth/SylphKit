@@ -2,33 +2,36 @@ import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { Button, Props } from '../src/Button/Button';
 
+
+
 const meta: Meta = {
   title: 'Button',
-    component: Button,
-    argTypes: {
-        children: {
+  component: Button,
+  argTypes: {
+    children: {
           defaultValue: "Default Text"
-      }
-  }
+      },
+    color: {
+      control: 'color',
+    },
+  },
 };
 
 export default meta;
 
-const Template: Story<Props> = (args) => <Button {...args} />;
+const Template: Story<Props> = args => <Button {...args} />;
 
-
-export const Primary = Template.bind({});
-Primary.args = {
-  children: 'Primary',
+export const Default = Template.bind({});
+Default.args = {
+  children: 'Click Me',
   variant: 'contained',
-    color: 'primary',
-  size: 'large'
+  color: "#000000"
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  children: 'Secondary',
+  children: 'Hello',
   variant: 'outlined',
-  color: 'secondary',
-  size: 'small',
+
+
 };
